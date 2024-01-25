@@ -1,0 +1,4 @@
+repository "joguinhodeRogério@caracol12@cloud"
+  path "/"
+    br "/main"
+    co "/main"
