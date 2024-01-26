@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coletado: {fileID: 1818744091682452704}
+  "pontua\xE7ao": 0
 --- !u!114 &3329593114156282273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coletado: {fileID: 1818744091682452704}
+  "pontua\xE7ao": 10
 --- !u!1001 &5615845265574694865
 PrefabInstance:
   m_ObjectHideFlags: 0
