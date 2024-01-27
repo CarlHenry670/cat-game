@@ -33,17 +33,17 @@ public class Player : MonoBehaviour
         transform.position += movement * Time.deltaTime * Speed;
         if (Input.GetAxis("Horizontal") > 0f)
         {
-            anim.SetBool("walk", true);
+            anim.SetBool("andar", true);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (Input.GetAxis("Horizontal") < 0f)
         {
-            anim.SetBool("walk", true);
+            anim.SetBool("andar", true);
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         if (Input.GetAxis("Horizontal") == 0f)
         {
-            anim.SetBool("walk", false);
+            anim.SetBool("andar", false);
         }
     }
 
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
             {
                 rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
-                anim.SetBool("pular", false);
+                anim.SetBool("pular", true);
             }
             else
             {
