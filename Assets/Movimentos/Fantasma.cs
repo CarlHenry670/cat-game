@@ -27,13 +27,12 @@ public class Fantasma : MonoBehaviour
 
         if(dirRight)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         else
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
 
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
