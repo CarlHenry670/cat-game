@@ -76,6 +76,12 @@ public class Player : MonoBehaviour
             isJumping = false;
             anim.SetBool("pular", false);
         }
+
+        if (collision.gameObject.tag == "espin")
+        {
+            Destroy(gameObject);
+            ControleJogo.instance.MostrarGameOver();
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)

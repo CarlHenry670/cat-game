@@ -33,36 +33,42 @@ public class Player2 : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
-            if(!isJumping)
+            if (!isJumping)
             {
                 rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
             }
             else
             {
-                if(doubleJump)
+                if (doubleJump)
                 {
                     rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                     doubleJump = false;
                 }
             }
-            
+
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
             isJumping = false;
         }
+
+        if (collision.gameObject.tag == "espin")
+        {
+            Destroy(gameObject);
+            ControleJogo.instance.MostrarGameOver();
+        }
     }
 
-        void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
             isJumping = true;
         }
