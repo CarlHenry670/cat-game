@@ -82,6 +82,12 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             ControleJogo.instance.MostrarGameOver();
         }
+
+        if (collision.gameObject.tag == "serrinha")
+        {
+            Destroy(gameObject);
+            ControleJogo.instance.MostrarGameOver();
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)

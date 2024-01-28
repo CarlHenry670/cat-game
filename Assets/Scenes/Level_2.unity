@@ -741,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657904332597866369, guid: 8708f0da2917d714085f30897e08d2b1, type: 3}
       propertyPath: nomelvl
-      value: Level_1
+      value: Level_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
