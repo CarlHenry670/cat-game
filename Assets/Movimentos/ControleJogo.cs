@@ -10,6 +10,9 @@ public class ControleJogo : MonoBehaviour
 public static ControleJogo instance;
   public TextMeshProUGUI scoreText; 
     public int TotalPontos;
+
+      public int peixinhosColetados; // Nova variável para rastrear o número de peixinhos coletados
+    public int NumeroTotalPeixinhos; // Nova variável para rastrear o número total de peixinhos no mapa
     void Start()
     {
         instance = this;
@@ -18,6 +21,19 @@ public static ControleJogo instance;
     public void UpdateScore()
     {
         scoreText.text = TotalPontos.ToString();
+    }
+
+
+        public void ColetarPeixinho()
+    {
+        peixinhosColetados++;
+        if (peixinhosColetados >= NumeroTotalPeixinhos) // NúmeroTotalPeixinhos é o total de peixinhos no mapa
+        {
+            // Se todos os peixinhos foram coletados, ative a portinha ou faça qualquer ação necessária.
+            Portinha.instance.AtivarPortinha();
+        }
+
+        UpdateScore();
     }
 
     public void MostrarGameOver()

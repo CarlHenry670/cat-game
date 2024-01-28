@@ -11,6 +11,7 @@ public class peixinho : MonoBehaviour
     public GameObject coletado;
 
     public int pontuaçao;
+    
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -33,7 +34,7 @@ public class peixinho : MonoBehaviour
 
             ControleJogo.instance.TotalPontos += pontuaçao;
             ControleJogo.instance.UpdateScore();
-
+         ControleJogo.instance.ColetarPeixinho(); 
             Destroy(gameObject, 0.3f);
         }
     }
