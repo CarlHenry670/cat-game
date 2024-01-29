@@ -10,7 +10,7 @@ public class Serra : MonoBehaviour
   private bool direcaoD = true;
   private float tempo;
 
-    // Update is called once per frame
+
     void Update()
     {
         if (direcaoD)

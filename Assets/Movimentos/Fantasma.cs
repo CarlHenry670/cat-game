@@ -50,10 +50,12 @@ public class Fantasma : MonoBehaviour
         float height = col.contacts[0].point.y - transform.position.y;
         if(height > 0)
         {
-            col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 18, ForceMode2D.Impulse);
            speed = 0;
             Destroy(gameObject, 0.5f);
         } 
+
+ 
 
     }
 }
