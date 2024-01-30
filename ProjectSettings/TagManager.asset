@@ -6,6 +6,7 @@ TagManager:
   tags:
   - espin
   - serrinha
+  - Player2
   layers:
   - Default
   - TransparentFX

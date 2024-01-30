@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class CAT : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float vel;
-    public float jumpForce2;
+    public float jumpForce;
     private Rigidbody2D rigi;
+
+     public bool isJumpingo;
+    public bool doubleJumpo;
+
 
     void Start()
     {
         rigi = GetComponent<Rigidbody2D>();
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         Movew();
         pulin();
     }
 
-
-     void Movew()
+    void Movew()
     {
         float horizontalInput = 0f;
 
@@ -40,9 +39,24 @@ public class CAT : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f);
         transform.position += movement * Time.deltaTime * vel;
     }
-    void pulin(){
-        if(Input.GetButtonDown("Jump")){
-            rigi.AddForce(new Vector2(0f, 10f), ForceMode2D.Impulse);
+
+    void pulin()
+    {
+        if (Input.GetButtonDown("pulin"))  
+        {
+            if(!isJumpingo)
+            {
+                rigi.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                doubleJumpo = true;
+            }
+            else
+            {
+                if(doubleJumpo)
+                {
+                    rigi.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                    doubleJumpo = false;
+                }
+            }
         }
-}
+    }
 }

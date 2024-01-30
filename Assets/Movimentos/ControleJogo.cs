@@ -44,8 +44,6 @@ public static ControleJogo instance;
     public void ReiniciarCena(string nomeCena)
     {
         SceneManager.LoadScene(nomeCena);
-
-
     }
 
     // Update is called once per frame
