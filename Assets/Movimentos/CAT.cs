@@ -27,11 +27,11 @@ public class CAT : MonoBehaviour
     {
         float horizontalInput = 0f;
 
-        if (Input.GetKey("j"))
+        if (Input.GetKey("left"))
         {
             horizontalInput = -1f;
         }
-        else if (Input.GetKey("k"))
+        else if (Input.GetKey("right"))
         {
             horizontalInput = 1f;
         }
@@ -57,6 +57,22 @@ public class CAT : MonoBehaviour
                     doubleJumpo = false;
                 }
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            isJumpingo = false;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            isJumpingo = true;
         }
     }
 }
